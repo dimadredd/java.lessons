@@ -6,8 +6,13 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        fileReaderExample(); //checked
-        arrayIndexExample(); //unchecked
+
+        try {
+            fileReaderExample(); //checked
+            arrayIndexExample(); //unchecked
+        } catch (Throwable t) {
+            System.out.println("Непредвиденная ошибка: " + t.getMessage());
+        }
     }
 
     // checked exception: IOException (обязана быть обработана/объявлена)
@@ -24,13 +29,11 @@ public class Main {
 
     // unchecked exception: ArrayIndexOutOfBoundsException (компилятор не требует обработки)
     public static void arrayIndexExample(){
-        try {
-            int[] arr = new int[2];
-            arr[3] = 10;
-            int result = arr[1];
-            System.out.println("Результат: " + result);
-        }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Ошибка: " + e.getMessage());
-        }
+
+        int[] arr = new int[2];
+        arr[3] = 10;
+        int result = arr[1];
+        System.out.println("Результат: " + result);
     }
 }
+
