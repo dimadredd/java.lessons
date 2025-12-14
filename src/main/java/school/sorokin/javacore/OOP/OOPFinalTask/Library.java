@@ -49,12 +49,12 @@ public class Library {
             if(pub.getAuthor().equalsIgnoreCase(author)){
 
                 //Проверяем, реализует ли объект интерфейс Printable
-                if(pub instanceof Printable){
-                    Printable printable = (Printable) pub;
 
-                    //Выводим подробную информацию о публикации через интерфейс Printable
-                    printable.printDetails();
-                }
+                Printable printable = (Printable) pub;
+
+                //Выводим подробную информацию о публикации через интерфейс Printable
+                printable.printDetails();
+
                 found = true;
             }
         }

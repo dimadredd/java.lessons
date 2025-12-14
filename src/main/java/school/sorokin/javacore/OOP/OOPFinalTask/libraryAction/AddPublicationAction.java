@@ -10,7 +10,7 @@ public class AddPublicationAction implements LibraryAction {
     private final Library library;
     private final Scanner scanner;
 
-    //Конструктор, который инициализирует поля library и scanner
+
     public AddPublicationAction(Library library, Scanner scanner) {
         this.library = library;
         this.scanner = scanner;

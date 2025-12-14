@@ -65,6 +65,7 @@ public class LibraryConsole {
                     new DeletePublicationAction(library,scanner).execute();
                     menuReturn(scanner);
                     printMenu();
+                    break;
                 case "0":
                     System.out.println("ВЫХОД ИЗ ПРОГРАММЫ.");
                     return;
@@ -75,7 +76,7 @@ public class LibraryConsole {
     }
 
     //Метод, который ожидает нажатия 0 для возврата в главное меню
-    public static void menuReturn(Scanner console) {
+    void menuReturn(Scanner console) {
 
         String input;
 

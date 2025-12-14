@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Magazine extends Publication implements Printable{
 
     //Инициализируем поля класса.
-    int issueNumber;
+    private int issueNumber;
 
     //Инициализируем конструктор.
     public Magazine(String title, String author, int year, int issueNumber){
@@ -66,7 +66,6 @@ public class Magazine extends Publication implements Printable{
     @Override
     public void printDetails(){
         System.out.println(getType());
-        System.out.println(toString());
         System.out.println("Номер выпуска: " + issueNumber);
         System.out.println();
     }

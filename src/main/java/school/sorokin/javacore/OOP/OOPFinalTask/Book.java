@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Book extends Publication implements Printable{
 
     //Инициализируем поля класса.
-    String ISBN;
+    private String ISBN;
 
     //Инициализируем конструктор.
     public Book(String title, String author, int year, String ISBN){
@@ -68,7 +68,6 @@ public class Book extends Publication implements Printable{
     @Override
     public void printDetails(){
         System.out.println(getType());
-        System.out.println(toString());
         System.out.println();
     }
 

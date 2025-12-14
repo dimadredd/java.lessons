@@ -66,7 +66,6 @@ public class Newspaper extends Publication implements Printable{
     @Override
     public void printDetails(){
         System.out.println(getType());
-        System.out.println(toString());
         System.out.println("День публикации: " + publicationDay);
         System.out.println();
     }

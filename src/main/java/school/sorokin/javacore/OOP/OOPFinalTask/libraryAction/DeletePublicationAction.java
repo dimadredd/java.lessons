@@ -43,7 +43,7 @@ public class DeletePublicationAction implements LibraryAction{
         scanner.nextLine();
 
         //Проверяем корректность введенного номера
-        if (index < 1 || index >= list.size()) {
+        if (index < 1 || index > list.size()) {
             System.out.println("Некорректный номер.\n");
             return;
         }
