@@ -12,14 +12,14 @@ public class CatalogManager {
         if (author == null || author.trim().isEmpty()){
             throw new IllegalArgumentException("Автор не может быть пустым.");
         }
-        if (title == null || title.trim().isEmpty()){
+        if (title == null || title.trim().isBlank()){
             throw new IllegalArgumentException("Название не может быть пустым.");
         }
         if (availableCopies < 0 ){
             throw new IllegalArgumentException("Количество экземпляров не может быть отрицательным.");
         }
 
-        author = author.trim();
+        author = author;
         title = title.trim();
 
         Book bookExist = findByTitle(title);
@@ -32,11 +32,11 @@ public class CatalogManager {
     }
 
     public void takeBook(String title){
-        if (title == null || title.trim().isEmpty()){
+        if (title == null || title.trim().isBlank()){
             throw new IllegalArgumentException("Название не может быть пустым.");
         }
 
-        Book book = requireByTitle(title.trim());
+        Book book = requireByTitle(title);
 
         if (book.getAvailableCopies() <= 0){
             throw new NoAvailableCopiesException("Нет доступных экземпляров книги: " + book.getTitle());
@@ -67,7 +67,7 @@ public class CatalogManager {
                 return b;
             }
         }
-        return null;
+        throw new ItemNotFoundException("Книга с названием '" + title + "' не найдена.");
     }
 
     private Book requireByTitle(String title){

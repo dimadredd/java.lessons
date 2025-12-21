@@ -93,7 +93,10 @@ public class Main {
     }
 
 
-    //Методы хэлперы возврат в меню + проверка пустых строк при вводе + проверка int
+    /**
+     *Методы хэлперы возврат в меню + проверка пустых строк при вводе + проверка int
+     */
+
     static void returnToMenu(Scanner scanner){
 
        while (true){
@@ -118,7 +121,7 @@ public class Main {
        }
     }
 
-    static String readNonEmptyLine(Scanner sc, String message) {
+    public static String readNonEmptyLine(Scanner sc, String message) {
         while (true) {
             System.out.print(message);
             String input = sc.nextLine().trim();
@@ -132,7 +135,7 @@ public class Main {
         }
     }
 
-    static int readNonNegativeInt(Scanner sc, String message) {
+    public static int readNonNegativeInt(Scanner sc, String message) {
         while (true) {
             System.out.print(message);
             String input = sc.nextLine().trim();
