@@ -1,6 +1,9 @@
-package school.sorokin.javacore.OOP.OOPFinalTask.libraryAction;
+package school.sorokin.javacore.FinalTasks.OOPFinalTask.libraryAction;
 
-import school.sorokin.javacore.OOP.OOPFinalTask.*;
+import school.sorokin.javacore.FinalTasks.OOPFinalTask.Book;
+import school.sorokin.javacore.FinalTasks.OOPFinalTask.Library;
+import school.sorokin.javacore.FinalTasks.OOPFinalTask.Magazine;
+import school.sorokin.javacore.FinalTasks.OOPFinalTask.Newspaper;
 
 import java.util.Scanner;
 

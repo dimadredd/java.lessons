@@ -1,4 +1,4 @@
-package school.sorokin.javacore.CollectionFramework.CollectionFinalTask;
+package school.sorokin.javacore.FinalTasks.CollectionFinalTask;
 
 public class ContactNotFoundException extends RuntimeException {
     public ContactNotFoundException(String message) {

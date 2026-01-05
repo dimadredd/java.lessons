@@ -1,4 +1,4 @@
-package school.sorokin.javacore.Exception.ExceptionFinalTask;
+package school.sorokin.javacore.FinalTasks.ExceptionFinalTask;
 
 import java.util.ArrayList;
 import java.util.Collections;

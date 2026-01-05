@@ -1,4 +1,4 @@
-package school.sorokin.javacore.basics;
+package school.sorokin.javacore.FinalTasks;
 
 import java.util.Scanner;
 

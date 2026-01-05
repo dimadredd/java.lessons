@@ -1,4 +1,4 @@
-package school.sorokin.javacore.CollectionFramework.CollectionFinalTask;
+package school.sorokin.javacore.FinalTasks.CollectionFinalTask;
 
 import java.util.Objects;
 
