@@ -1,4 +1,4 @@
-package school.sorokin.javacore.Exception.ExceptionFinalTask;
+package school.sorokin.javacore.FinalTasks.ExceptionFinalTask;
 
 public class Book {
 

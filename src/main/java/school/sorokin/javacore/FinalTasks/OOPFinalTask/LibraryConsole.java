@@ -1,6 +1,6 @@
-package school.sorokin.javacore.OOP.OOPFinalTask;
+package school.sorokin.javacore.FinalTasks.OOPFinalTask;
 
-import school.sorokin.javacore.OOP.OOPFinalTask.libraryAction.*;
+import school.sorokin.javacore.FinalTasks.OOPFinalTask.libraryAction.*;
 
 import java.util.Scanner;
 
