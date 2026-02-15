@@ -9,7 +9,7 @@ public class OrderService {
 
     public String processOrder(Order order) {
 
-        if (order == null) return "Order processing failed";
+        if (order == null) return "Order processing failed: \"Null from BD\"";
 
         try {
             orderRepository.saveOrder(order);
