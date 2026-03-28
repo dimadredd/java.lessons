@@ -1,4 +1,4 @@
-package school.sorokin.springcore.IoCandApplicationContext;
+package school.sorokin.springcore.springCore.IoCandApplicationContext;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

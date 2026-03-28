@@ -1,10 +1,10 @@
-package school.sorokin.springcore.DI;
+package school.sorokin.springcore.springCore.DI;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import school.sorokin.springcore.DI.GreetingPrinter.GreetingPrinterConstructor;
-import school.sorokin.springcore.DI.GreetingPrinter.GreetingPrinterField;
-import school.sorokin.springcore.DI.GreetingPrinter.GreetingPrinterSetter;
+import school.sorokin.springcore.springCore.DI.GreetingPrinter.GreetingPrinterConstructor;
+import school.sorokin.springcore.springCore.DI.GreetingPrinter.GreetingPrinterField;
+import school.sorokin.springcore.springCore.DI.GreetingPrinter.GreetingPrinterSetter;
 
 public class App {
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
-package school.sorokin.springcore.DI.GreetingPrinter;
+package school.sorokin.springcore.springCore.DI.GreetingPrinter;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import school.sorokin.springcore.DI.GreetingService.GreetingService;
+import school.sorokin.springcore.springCore.DI.GreetingService.GreetingService;
 
 @Component
 public class GreetingPrinterConstructor {
