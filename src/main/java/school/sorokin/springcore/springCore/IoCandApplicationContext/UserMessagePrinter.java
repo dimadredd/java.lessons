@@ -1,4 +1,4 @@
-package school.sorokin.springcore.IoCandApplicationContext;
+package school.sorokin.springcore.springCore.IoCandApplicationContext;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package school.sorokin.springcore.DI.GreetingService;
+package school.sorokin.springcore.springCore.DI.GreetingService;
 
 import org.springframework.stereotype.Component;
 
