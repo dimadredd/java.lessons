@@ -88,31 +88,38 @@ public class AccountService {
 
     public void closeAccount(int accountId) {
         Optional<Account> accountOpt = getAccountById(accountId);
-        accountOpt.ifPresent(account -> {
-            accounts.remove(accountId);
-
+        accountOpt.ifPresentOrElse(account -> {
             int remaining = account.getMoneyAmount();
+
             if (remaining > 0) {
                 Optional<User> userOpt = userService.getUserById(account.getUserId());
                 userOpt.ifPresent(user -> {
-                    var otherAccounts = user.getAccountList().stream()
-                            .filter(acc -> acc.getId() != accountId && accounts.containsKey(acc.getId()))
-                            .findFirst();
 
-                    if (otherAccounts.isPresent()) {
-                        Account target = otherAccounts.get();
-                        target.setMoneyAmount(target.getMoneyAmount() + remaining);
-                        user.getAccountList().remove(account);
-                        System.out.printf("Account %d closed. Remaining balance %d transferred to account %d%n",
-                                accountId, remaining, target.getId());
-                    } else {
-                        System.out.printf("Account %d closed. No other accounts to transfer remaining balance.%n", accountId);
+                    if (user.getAccountList().get(0).getId() == accountId) {
+                        System.out.printf("Cannot close first account %d with balance %d%n",
+                                accountId, remaining);
+                        return;
                     }
+
+
+                    Account firstAccount = user.getAccountList().get(0);
+                    firstAccount.setMoneyAmount(firstAccount.getMoneyAmount() + remaining);
+
+
+                    accounts.remove(accountId);
+                    user.getAccountList().remove(account);
+
+                    System.out.printf("Account %d closed. Remaining %d transferred to %d%n",
+                            accountId, remaining, firstAccount.getId());
                 });
             } else {
+
+                accounts.remove(accountId);
+                userService.getUserById(account.getUserId())
+                        .ifPresent(user -> user.getAccountList().remove(account));
                 System.out.printf("Account %d closed.%n", accountId);
             }
-        });
+        }, () -> System.out.println("Account not found"));
     }
 
     public Optional<Account> getAccountById(int id) {
