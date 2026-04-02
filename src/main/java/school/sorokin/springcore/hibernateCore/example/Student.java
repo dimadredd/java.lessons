@@ -1,4 +1,4 @@
-package school.sorokin.springcore.hibernateCore.hibernateBasics.example;
+package school.sorokin.springcore.hibernateCore.example;
 
 import jakarta.persistence.*;
 import lombok.Getter;
