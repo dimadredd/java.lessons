@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class NotNullArgsAspect {
 
-    @Around("@annotation(NotNullArgs)")
+    @Around("@annotation(notNullArgs)")
     public Object notNullArgs(ProceedingJoinPoint pjp, NotNullArgs notNullArgs) throws Throwable {
         Object[] args = pjp.getArgs();
 
