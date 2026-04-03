@@ -1,19 +1,21 @@
-package school.sorokin.springcore.hibernateCore.example;
+package school.sorokin.springcore.hibernateCore.oneToOne.config;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.context.annotation.Bean;
+import school.sorokin.springcore.hibernateCore.oneToOne.User;
+import school.sorokin.springcore.hibernateCore.oneToOne.UserProfile;
 
 @org.springframework.context.annotation.Configuration
-public class HibernateConfiguration {
+public class HibernateConfig {
 
     @Bean
     public SessionFactory sessionFactory() {
         Configuration configuration = new Configuration();
 
         configuration
-                .addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Profile.class)
+                .addAnnotatedClass(User.class)
+                .addAnnotatedClass(UserProfile.class)
                 .addPackage("school.sorokin.springcore.hibernateCore.example")
                 .setProperty("hibernate.connection.driver_class", "org.postgresql.Driver")
                 .setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/postgres")

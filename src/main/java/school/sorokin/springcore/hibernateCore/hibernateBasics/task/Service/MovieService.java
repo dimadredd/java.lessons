@@ -18,13 +18,12 @@ public class MovieService {
     }
 
 //      закоммитить транзакцию
-    public Movie saveMovie(Movie movie) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        session.persist(movie);
-        session.getTransaction().commit();
-        session.close();
-        return movie;
+    public void saveMovie(Movie movie) {
+        try (Session session = sessionFactory.openSession();) {
+            session.beginTransaction();
+            session.persist(movie);
+            session.getTransaction().commit();
+        }
     }
 
 //    открыть новую сессию и прочитать все фильмы
@@ -47,14 +46,13 @@ public class MovieService {
         return genreMovies;
     }
 
-    public Movie updateMovieTitleById(Long id, String title){
+    public void updateMovieTitleById(Long id, String title){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         Movie movie = session.find(Movie.class, id);
         movie.setTitle(title);
         session.getTransaction().commit();
         session.close();
-        return movie;
     }
 
     public void deleteMovieById(Long id) {
