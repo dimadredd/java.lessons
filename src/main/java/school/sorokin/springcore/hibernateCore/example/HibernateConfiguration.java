@@ -1,4 +1,4 @@
-package school.sorokin.springcore.hibernateCore.hibernateBasics.example;
+package school.sorokin.springcore.hibernateCore.example;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -13,7 +13,7 @@ public class HibernateConfiguration {
 
         configuration
                 .addAnnotatedClass(Student.class)
-                .addPackage("school.sorokin.springcore.hibernateCore.hibernateBasics")
+                .addPackage("school.sorokin.springcore.hibernateCore.example")
                 .setProperty("hibernate.connection.driver_class", "org.postgresql.Driver")
                 .setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/postgres")
                 .setProperty("hibernate.connection.username", "postgres")
