@@ -4,13 +4,11 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Table(name = "students")
 @Getter
 @NoArgsConstructor
-@ToString
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +25,26 @@ public class Student {
     @OneToOne(mappedBy = "student", cascade = CascadeType.REMOVE)
     private Profile profile;
 
-    public Student(String name, Integer age) {
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Group group;
+
+    public Student(
+            String name,
+            Integer age,
+            Group group
+    ) {
         this.name = name;
         this.age = age;
+        this.group = group;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
